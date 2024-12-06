@@ -11,7 +11,7 @@ const GetDeViceInfo = mqttClient.onMessage(async (topic, message) => {
             const adaFruitID = jsonMessage.id;
             const name = jsonMessage.key;
 
-            if (name === 'speechrecognition' || name === 'color') return;
+            if (name === 'color') return;
 
             let device = await Device.findOne({ adaFruitID }); 
 

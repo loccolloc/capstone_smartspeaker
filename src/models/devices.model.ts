@@ -5,7 +5,7 @@ const deviceSchemaFields: Record<string, any> = {
     deviceState: { type: String, enum: ['ON', 'OFF', 'NONE'], required: true },
     deviceType: {
         type: String,
-        enum: [ 'speaker.volume' ,'bedroom.fan','living-room.sub-light','living-room.main-light','bedroom.sub-light','bedroom.main-light','living-room.fan'],
+        enum: [ 'speaker.volume' ,'bedroom.fan','living-room.sub-light','living-room.main-light','bedroom.sub-light','bedroom.main-light','living-room.fan','living-room.mois','living-room.temp', 'bedroom.mois','bedroom.temp'],
         required: true,
     },
     userID: { type: String }, 

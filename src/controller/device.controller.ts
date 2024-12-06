@@ -301,27 +301,17 @@ export const getValueByType = async (req: Request, res: Response) => {
 
 export const addDevice = async (req: Request, res: Response) => {
     try {
-        const { userID, deviceID } = req.body; 
+        const { userID, deviceID, deviceName} = req.body; 
         
         let device = await Device.findOne({ adaFruitID: deviceID });
         
         if (!device) {
             return res.status(StatusCodes.BAD_REQUEST).json({ message: "Don't have device!" });
         }
-        if (!device) {
-            device = new Device({
-                adaFruitID: deviceID,
-                userID: userID,  
-            });
-            await device.save();
-            return res.status(StatusCodes.CREATED).json({
-                message: "Device added and created successfully",
-                device,
-            });
-        }
 
         if (!device.userID) {
             device.userID = userID;
+            device.deviceName = deviceName;
             await device.save();
             return res.status(StatusCodes.OK).json({
                 message: "Device userID updated successfully",

@@ -10,11 +10,12 @@ mongoose.connect(DB_ENDPOINT)
 
 
 const seedDevices = [
+
     {
-        adaFruitID: '1923959',
-        deviceName: 'Loa thông minh',
+        adaFruitID: '2398009',
+        deviceName: 'Độ ẩm không khí',
         deviceState: 'OFF',
-        deviceType: 'speaker.volume',
+        deviceType: 'bedroom.mois',
         userID: "6741f4d371f94fc0bc20becc",
         schedule: [],
         color: 'white',
@@ -25,7 +26,20 @@ const seedDevices = [
         environmentValue: []
     },
     
-
+    {
+        adaFruitID: '2298009',
+        deviceName: 'Nhiệt độ',
+        deviceState: 'OFF',
+        deviceType: 'bedroom.temp',
+        userID: "6741f4d371f94fc0bc20becc",
+        schedule: [],
+        color: 'white',
+        minLimit: 0,
+        maxLimit: 0,
+        lastValue: 0,
+        updatedTime: new Date().toISOString(),
+        environmentValue: []
+    },
 ];
 
 
